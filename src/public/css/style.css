@@ -1,0 +1,271 @@
+/* VarelaRound - sans serif */
+@font-face {
+  font-family: "VarelaRound";
+  src:         url("/fonts/VarelaRound/VarelaRound-Regular.woff2") format("woff2"),
+               url("/fonts/VarelaRound/VarelaRound-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style:  normal;
+}
+/* also supports bold, italic and bolditalic */
+
+/* DejavuSansMono - monospace */
+@font-face {
+  font-family: "DejaVuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-Regular.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "DejaVuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-Bold.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "DejavuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-Oblique.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-Oblique.woff") format("woff");
+  font-weight: normal;
+  font-style:  italic;
+}
+@font-face {
+  font-family: "DejaVuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.woff") format("woff");
+  font-weight: bold;
+  font-style:  italic;
+}
+
+/* AnonymousPro - monospace */
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-Regular.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-Bold.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-Italic.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style:  italic;
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-BoldItalic.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style:  italic;
+}
+
+:root {
+  --clr_dark:        #303030;
+  --clr_grey:        #424242;
+  --clr_gold:        #F5CD7B;
+  --clr_white:       #CCCCCC;
+  --clr_red:         #EF2929;
+  --clr_green:       #4E9A06;
+  --clr_blue:        #548CFF;
+  --clr_gray:        #707070;
+  --clr_light_green: #70E000;
+
+  --clr_bg:     var(--clr_dark);
+  --clr_obj:    var(--clr_grey);
+  --clr_fg:     var(--clr_gold);
+  --clr_action: var(--clr_white);
+  --clr_text:   var(--clr_white);
+
+  --clr_cli_command:     var(--clr_white);
+  --clr_cli_showcommand: var(--clr_gray);
+  --clr_cli_root:        var(--clr_red);
+  --clr_cli_user:        var(--clr_green);
+  --clr_cli_block:       orange;
+  --clr_cli_dir:         var(--clr_blue);
+  --clr_cli_file:        var(--clr_light_green);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--clr_bg);
+  line-height: 1.6;
+  word-break: normal;
+}
+
+/*******************************************************************************
+**                                   Header                                   **
+*******************************************************************************/
+div.header {
+  display:         flex;
+  justify-content: left;   /* X */
+  align-items:     center; /* Y */
+  flex-wrap:       nowrap;
+
+  width:     100%;
+  max-width: 100%;
+
+  border-bottom-style: solid;
+  border-bottom-width: 8px;
+  border-bottom-color: var(--clr_fg);
+}
+
+/********************************* Left side **********************************/
+div.header div.header_l {
+  display:         flex;
+  justify-content: left;   /* X */
+  align-items:     center; /* Y */
+  flex-wrap:       wrap;
+
+  flex-grow:   0;
+  flex-shrink: 0;
+  width:       auto;
+  height:      auto;
+
+  padding-left:   20px;
+  padding-right:  10px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+}
+
+div.header_l a {
+  /* stop positioning elements inside <a> lower */
+  line-height: 0px;
+  font-size:   0px;
+}
+
+div.header_l a img {
+  height: 50px;
+  width:  auto;
+
+  filter:                     drop-shadow(0px 0px 0px transparent);
+  transition-property:        filter;
+  transition-duration:        0.3s;
+  transition-timing-function: ease;
+}
+div.header_l a img:hover {
+  filter: drop-shadow(0px 0px 3px var(--clr_fg));
+}
+div.header_l a img:active {
+  filter: drop-shadow(0px 0px 6px var(--clr_action));
+}
+
+/********************************* Right Side *********************************/
+div.header div.header_r {
+  display:         flex;
+  justify-content: right;  /* X */
+  align-items:     center; /* Y */
+  flex-wrap:       wrap;
+
+  flex-grow:   1;
+  flex-shrink: 1;
+  width:       auto;
+  height:      auto;
+
+  padding-left:   10px;
+  padding-right:  20px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+}
+
+div.header_r a {
+  font-family: "VarelaRound";
+  font-size:   22px;
+  font-weight: normal;
+  font-style:  normal;
+
+  margin-left:   10px;
+
+  /* animated underline */
+  position:        relative;
+  text-decoration: none;
+  line-height:     30px;
+}
+div.header_r a::before {
+  /* animated underline - position */
+  content:  "";
+  display:  block;
+  position: absolute;
+  left:     0px;
+  bottom:   0px;
+
+  /* animated underline - size */
+  width:            100%;
+  height:           4px;
+  border-radius:    4px;
+
+  /* animated underline - animation */
+  transform: scaleX(0); /* X axis, 0 (empty) on start */
+
+  /* animated underline - transition animation effect */
+  transition-property:        transform;
+  transition-duration:        0.3s;
+  transition-timing-function: ease;
+}
+/* unvisited link */
+div.header_r a:link {
+  color: var(--clr_fg);
+}
+div.header_r a:link::before {
+  background-color: var(--clr_fg);
+}
+/* visited link */
+div.header_r a:visited {
+  color: var(--clr_fg);
+}
+div.header_r a:visited::before {
+  background-color: var(--clr_fg);
+}
+/* mouse hover */
+div.header_r a:hover {
+  color: var(--clr_fg);
+}
+div.header_r a:hover::before {
+  transform:        scaleX(1); /* X axis, 1 (full) on hover */
+  background-color: var(--clr_fg);
+}
+/* being clicked */
+div.header_r a:active {
+  color:  var(--clr_action);
+  filter: drop-shadow(0px 0px 6px var(--clr_action));
+}
+div.header_r a:active::before {
+  background-color: var(--clr_action);
+}
+
+div.header_r a.header_active {
+  filter: drop-shadow(0px 0px 6px var(--clr_fg));
+
+  color: var(--clr_action) !important;
+}
+
+/*******************************************************************************
+**                                  Article                                   **
+*******************************************************************************/
+article {
+  display: block;
+
+  overflow: hidden;
+
+  width:     100%;
+  max-width: 800px;
+
+  margin: auto;
+
+  background-color: var(--clr_bg);
+
+  padding-left:   5px;
+  padding-right:  5px;
+  padding-top:    0px;
+  padding-bottom: 5px;
+}
